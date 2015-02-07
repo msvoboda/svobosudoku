@@ -1,0 +1,80 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F3ABEF0D-8237-4751-AFE3-997EC96A3A7D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SudokuGrid</RootNamespace>
+    <AssemblyName>SudokuGrid</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Accessibility" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SudokuButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SudokuButton.Designer.cs">
+      <DependentUpon>SudokuButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SudokuClass.cs" />
+    <Compile Include="SudokuGridControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SudokuGridControl.Designer.cs">
+      <DependentUpon>SudokuGridControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SudokuGridView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SudokuGridView.Designer.cs">
+      <DependentUpon>SudokuGridView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SudokuPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SudokuPanel.Designer.cs">
+      <DependentUpon>SudokuPanel.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="SudokuGridControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SudokuGridControl.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
